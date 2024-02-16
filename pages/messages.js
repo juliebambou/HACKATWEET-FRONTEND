@@ -13,7 +13,7 @@ function messages() {
         </div>
 
         <div className={styles.middlecontent}>
-           <Tweet/>
+           {/* <Tweet/> */}
             <LastTweets/>
         </div>
 

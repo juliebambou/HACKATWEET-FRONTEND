@@ -13,7 +13,7 @@ function Menu() {
 
 
       <div className={styles.menubas}>
-      <img className={styles.avatar}src= "./avatar.png"/>
+      <img className={styles.avatar}src= "./avatar2.png"/>
       <button className={styles.buttonlogout}>Logout</button>
       </div>
       </main>
