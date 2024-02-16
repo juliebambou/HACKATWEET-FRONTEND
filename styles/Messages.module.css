@@ -1,0 +1,51 @@
+.menu {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    border: 2px solid beige;
+}
+
+.leftcontent {
+    width: 30%;
+    border: 2px solid beige;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+
+.middlecontent {
+    width: 40%;
+    border: 2px solid beige;
+}
+
+.rightcontent {
+    width: 30%;
+    border: 2px solid beige;
+}
+
+.logo3 {
+    width: 100px;
+    height: 100px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+}
+
+.buttonlogout {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 12.5px 30px;
+    border: 2px solid beige;
+    border-radius: 100px;
+    background-color: black;
+    color: rgb(82, 169, 240);
+    font-weight: Bold;
+    width: 150px;
+    height: 40px;
+    transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  }
