@@ -1,15 +1,19 @@
 import { useState } from 'react';
 import styles from '../styles/Home.module.css';
-//import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Popover } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { login } from '../reducers/user';
-//import Link from 'next/link';
+import Link from 'next/link';
 
 
 
 function Login() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.value);
+
+
   const [signUpFirstName, setSignUpFirstName] = useState('');
   const [signUpUsername, setSignUpUsername] = useState('');
 	const [signUpPassword, setSignUpPassword] = useState('');
@@ -55,7 +59,6 @@ function Login() {
 
   const popoverContentUp = (
     <div className={styles.popoverContent}>
-      <span><FontAwesomeIcon icon={faCircleXmark} className={styles.crossIcon}/></span>
       <img className={styles.logopop}src= "./logo.png"/>
 
       <h1 className={styles.already}>Create your Hackatweet account</h1>
@@ -68,10 +71,11 @@ function Login() {
 
      <input className={styles.inputpop} placeholder="Password"
      onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword} ></input>
-
-     <button className={styles.buttonpop} onClick={() => handleUp()}>Sign up</button>
+    <button className={styles.buttonpop} onClick={() => handleUp()}>Sign up</button>
     </div>
   );
+
+
 
   const popoverContentIn = (
     <div className={styles.popoverContent}>
@@ -87,10 +91,12 @@ function Login() {
 
      <input className={styles.inputpop} placeholder="Password"
      onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} ></input>
-
-     <button className={styles.buttonpop} onClick={() => handleIn()}>Sign in</button>
+    <button className={styles.buttonpop} onClick={() => handleIn()}>Sign in</button>
     </div>
   );
+
+
+
 
   return (
       <div className={styles.contentright}>
@@ -98,11 +104,13 @@ function Login() {
         <h1 className={styles.title}>See what's
         <br></br>happening</h1>
         <h2 className={styles.soustitle}>Join Hackatweet today.</h2>
+
         <Popover title="" content={popoverContentUp} className={styles.popover} trigger="click">
         <button className={styles.buttonup}>Sign up</button>
-
         </Popover>
+
         <h3 className={styles.already}>Already have an account?</h3>
+
         <Popover title="" content={popoverContentIn} className={styles.popover} trigger="click">
         <button className={styles.buttonin}>Sign in</button>
         </Popover>
